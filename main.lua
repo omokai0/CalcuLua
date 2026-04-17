@@ -4,6 +4,22 @@ function love.load()
   first# = 0
   second# = 0
   output = "no numbers to crunch"
+
+  function domath+()
+    output = first# + second#
+  end
+
+  function domath-()
+    output = first# - second#
+  end
+
+  function domath/()
+    output = first# / second#
+  end
+
+  function domath*()
+    output = first# * second#
+  end
 end
 
 function love.update(dt)
