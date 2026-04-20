@@ -4,23 +4,13 @@ function love.load()
   })
   
   love.graphics.setBackgroundColor(0, 0.3, 0.6)
-  love.graphics.newImage("assets/cursorF.png")
-  cursor = love.mouse.newCursor("assets/cursorF.png", 9, 9)
-  love.mouse.setCursor(cursor)
-
-  mathstate = "none"
+  
+  mathstate = "Test Window"
   mathtype = "none"
   first_num = 0
   second_num = 0
-  output = "no numbers to crunch"
-
-  function inputNum()
-    if mathstate == "first" then
-      first_num = tonumber(love.keyboard.getTextInput())
-    elseif mathstate == "second" then
-      second_num = tonumber(love.keyboard.getTextInput())
-    end
-  end
+  output = 0
+end
 
   domath = {}  
 
@@ -42,6 +32,12 @@ function love.load()
 end
 
 function love.update(dt)
+   function inputNum()
+    if mathstate == "first" then
+      first_num = tonumber(love.keyboard.getTextInput())
+    elseif mathstate == "second" then
+      second_num = tonumber(love.keyboard.getTextInput())
+    end
 end
 
 canEsc = true
@@ -66,7 +62,9 @@ function love.keypressed(key)
 end
 
 function love.draw()
+  if mathstate == "Test Window" do
   love.graphics.print("Welcome to CalcuLua Test Window!", 0 , 0)
-    love.graphics.print("This is just a window test so it doesnt do anything", 0, 10)
+    love.graphics.print("This is just a window test so it doesnt do anything yet", 0, 10)
     love.graphics.print("Press esc to close the window, f11 to toggle fullscreen", 0, 20)
+  end
 end
